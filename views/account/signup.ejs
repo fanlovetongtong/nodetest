@@ -2,7 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>sign in</title>
+    <title>sign up</title>
+    <link
+      rel="stylesheet"
+      href="/css/account/signup.css"
+      media="screen"
+      title="no title">
   </head>
   <body>
     <div class="sign-up-container">
@@ -12,16 +17,13 @@
       <div class="sign-up-form">
         <div class="user-account form-tr">
           <label>Username or email address</label>
-          <input type="text" autocomplete="off" id="username" value=""/>
+          <input type="text"  name="login" autocomplete="off" id="username" value=""/>
         </div>
         <div class="user-password form-tr">
           <label>password</label>
-          <input autocomplete="off" type="password" id="password" value=""/>
+          <input autocomplete="off"  name="pwd" type="password" id="password" value=""/>
         </div>
         <button class="sign-up-button">Sign up</button>
-      </div>
-      <div class="sign-up">
-        <a class="sign-up-link" href="/account/signup">Create an account</a>
       </div>
     </div>
     <script src="/3th-part/jquery-1.10.2.min.js"></script>

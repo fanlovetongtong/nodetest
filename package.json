@@ -26,7 +26,8 @@
     "gulp-babel": "^6.1.2",
     "gulp-cli": "^1.2.2",
     "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "sass-loader": "^4.0.2"
   },
   "dependencies": {
     "body-parser": "1.12.3",
@@ -37,6 +38,7 @@
     "gulp": "^3.9.1",
     "leanengine": "1.2.2",
     "swig": "^1.4.2",
+    "vue": "^2.0.5",
     "vue-cli": "^2.4.0",
     "webpack": "^1.13.3"
   }
