@@ -5,6 +5,9 @@
         font-family: "Segoe UI";
         box-sizing: border-box;
     }
+    li {
+        user-select: none;
+    }
     .drop-down {
         position: absolute;
         border: 1px solid #e3e6e9;
@@ -19,6 +22,21 @@
         cursor: pointer;
         color: #fff;
     }
+    .current-date {
+        button {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 0;
+            color: #222222;
+            font-size: 0.875em;
+            width: 100%;
+            background: transparent;
+            border: 0;
+            border-top: 1px solid #e3e6e9;
+            cursor: pointer;
+        }
+    }
 }
 
 </style>
@@ -30,11 +48,13 @@
         <input class="date-input" v-model.lazy.trim="formatTime" v-on:change="changeDate" ref="input" /><i class="show-icon" v-on:click.stop="showDrop">icon</i>
     </div>
     <div class="drop-down" v-show="isShow" v-on:mousedown.stop="handleClick">
-        <div class="day-picker-header">
-            <span>{{viewDate.getFullYear()}}</span>
-            <span>{{months[viewDate.getMonth()]}}</span>
+        <picker-header :view-date="viewDate" v-on:selectDate="selectDate" :select-type="selectType" v-on:changeType="changeType"></picker-header>
+        <day-picker :view-date="viewDate" v-on:selectDate="selectDate" v-if="selectType=='day'"></day-picker>
+        <month-picker :view-date="viewDate" v-on:selectDate="selectDate" v-if="selectType=='month'"></month-picker>
+        <year-picker :view-date="viewDate" v-on:selectDate="selectDate" v-if="selectType=='year'"></year-picker>
+        <div class="current-date">
+            <button v-on:click="selectDate(new Date(),'day',false)">Today</button>
         </div>
-        <day-picker :view-date="viewDate" v-on:selectDate="selectDate" v-on:closeProp="closePorp"></day-picker>
     </div>
 </div>
 
@@ -65,6 +85,9 @@ function formatDate(date) {
     return year + '-' + month + '-' + day;
 }
 var DayPicker = require('./dayPicker.vue');
+var MonthPicker = require('./monthPicker.vue');
+var YearPicker = require('./yearPicker.vue');
+import Header from './datePickerHeader.vue';
 module.exports = {
     data: function() {
         return {
@@ -73,12 +96,14 @@ module.exports = {
             formatTime: "2015-8-9",
             isCurrentDate: false,
             viewDate: new Date(2016, 10, 10),
-            selectedDate: new Date(2016, 10, 10),
+            selectedDate: null,
             months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+            selectType: "day"
         }
     },
     created: function() {
         var self = this;
+        self.selectedDate = self.viewDate;
         // this.viewDate = this.selectDate;
         window.document.onmousedown = function(e) {
             let event = e || window.event;
@@ -94,7 +119,11 @@ module.exports = {
     mounted: function() {},
     computed: {
         formatTime: function() {
-            return formatDate(this.selectedDate);
+            if (this.selectedDate == null) {
+                return ""
+            } else {
+                return formatDate(this.selectedDate);
+            }
         }
     },
     filters: {
@@ -102,13 +131,21 @@ module.exports = {
     },
     methods: {
         changeDate: function() {
-            var value = this.$refs.input.value;
-            var date = new Date(value);
-            if (isNaN(Date.parse(date))) {
-                this.selectedDate = new Date(Date.parse(this.viewDate));
+            var value = String.trim(this.$refs.input.value);
+            if (value == "") {
+                this.viewDate = new Date();
+                this.selectedDate = null;
             } else {
-                this.selectedDate = this.viewDate = date;
+                var date = new Date(value);
+                if (isNaN(Date.parse(date))) {
+                    this.selectedDate = new Date(Date.parse(this.viewDate));
+                } else {
+                    this.selectedDate = this.viewDate = date;
+                }
             }
+        },
+        changeType: function(type) {
+            this.selectType = type;
         },
         showDrop: function() {
             this.isShow = !this.isShow;
@@ -117,8 +154,9 @@ module.exports = {
         handleClick: function() {
             this.$refs.datePciker.focus();
         },
-        selectDate: function(date, isNeedChange) {
+        selectDate: function(date, nextType, isNeedChange) {
             this.viewDate = date;
+            this.selectType = nextType;
             if (isNeedChange) {
                 this.selectedDate = this.viewDate;
                 this.isShow = false;
@@ -129,7 +167,10 @@ module.exports = {
         }
     },
     components: {
-        'day-picker': DayPicker
+        'day-picker': DayPicker,
+        'month-picker': MonthPicker,
+        'year-picker': YearPicker,
+        'picker-header': Header
     }
 }
 

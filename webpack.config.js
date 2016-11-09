@@ -1,7 +1,7 @@
 const config = {
   entry: {
     'home/index': './js/home/index.js',
-    'plugin/index':'./js/plugin/index.js'
+    'plugin/index': './js/plugin/index.js'
   },
   output: {
     filename: '[name].js',
@@ -12,12 +12,6 @@ const config = {
       test: /\.(js|vue)$/,
       exclude: /(node_modules|bower_components)/,
       loader: 'babel', // 'babel-loader' is also a valid name to reference
-      query: {
-        presets: ['es2015'],
-        plugins: [
-          "transform-runtime"
-        ]
-      },
 
     }, {
       test: /\.vue$/,
@@ -27,6 +21,12 @@ const config = {
       test: /\.scss$/,
       loaders: ["style", "css", "sass"]
     }]
+  },
+  babel: {
+    presets: ['es2015'],
+    plugins: [
+      "transform-runtime"
+    ]
   },
   devtool: 'source-map',
   resolve: {

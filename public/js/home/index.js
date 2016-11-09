@@ -1707,6 +1707,8 @@
 /* 74 */
 /***/ function(module, exports) {
 
+	"use strict";
+	
 	//
 	//
 	//
@@ -1724,7 +1726,7 @@
 	
 	
 	module.exports = {
-	    data: function () {
+	    data: function data() {
 	        return {
 	            greeting: "hello"
 	

@@ -61,21 +61,7 @@
             }
         }
     }
-    .current-date {
-        button {
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            padding: 0;
-            color: #222222;
-            font-size: 0.875em;
-            width: 100%;
-            background: transparent;
-            border: 0;
-            border-top: 1px solid #e3e6e9;
-            cursor: pointer;
-        }
-    }
+
 }
 
 </style>
@@ -95,9 +81,7 @@
             {{day|getDate}}
         </li>
     </ul>
-    <div class="current-date">
-        <button v-on:click="selectDay(new Date(),true)">Today</button>
-    </div>
+
 </div>
 
 </template>
@@ -146,7 +130,7 @@ module.exports = {
     },
     methods: {
         selectDay: function(date, isCurrent) {
-            this.$emit("selectDate", date, !isCurrent);
+            this.$emit("selectDate", date,'day', !isCurrent);
         },
         getClass: function(date) {
             var self = this,
