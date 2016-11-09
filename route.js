@@ -20,7 +20,9 @@ app.use(express.static('public'));
 var indexRoute = require('./route/index')
 var accountRoute = require('./route/account/index');
 var filter = require('./filter/authorizeFilter');
+var plugin = require('./route/plugin/index');
 app.use('/account', accountRoute);
 app.use(filter);
 app.use(indexRoute);
+app.use('/plugin',plugin);
 module.exports = app;

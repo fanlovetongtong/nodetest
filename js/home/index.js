@@ -1,16 +1,11 @@
-import Vuetest from "./vue/index.vue";
-var Vue = require("Vue");
-
-$(function() {
-  _bind();
-
-  function _bind() {
-    var vm = new Vue({
-      el: '#test',
-      components: {
-        'my-test': Vuetest
-      }
-    })
+import Vuetest from "../../vue/index.vue";
+import Vue from 'vue'
+var vm = new Vue({
+  el: '#test',
+  data:{
+    hello:'nihao'
+  },
+  components:{
+    'my-test':Vuetest
   }
-
 })

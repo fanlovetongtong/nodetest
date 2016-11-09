@@ -46,9 +46,9 @@
 
 	'use strict';
 	
-	var _index = __webpack_require__(1);
+	var _datePicker = __webpack_require__(77);
 	
-	var _index2 = _interopRequireDefault(_index);
+	var _datePicker2 = _interopRequireDefault(_datePicker);
 	
 	var _vue = __webpack_require__(76);
 	
@@ -58,51 +58,14 @@
 	
 	var vm = new _vue2.default({
 	  el: '#test',
-	  data: {
-	    hello: 'nihao'
-	  },
 	  components: {
-	    'my-test': _index2.default
+	    'day-picker': _datePicker2.default
 	  }
+	
 	});
 
 /***/ },
-/* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	var _typeof2 = __webpack_require__(2);
-	
-	var _typeof3 = _interopRequireDefault(_typeof2);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var __vue_exports__, __vue_options__;
-	var __vue_styles__ = {};
-	
-	/* styles */
-	__webpack_require__(70);
-	
-	/* script */
-	__vue_exports__ = __webpack_require__(74);
-	
-	/* template */
-	var __vue_template__ = __webpack_require__(75);
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {};
-	if ((0, _typeof3.default)(__vue_exports__.default) === "object" || typeof __vue_exports__.default === "function") {
-	  __vue_options__ = __vue_exports__ = __vue_exports__.default;
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options;
-	}
-	
-	__vue_options__.render = __vue_template__.render;
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns;
-	
-	module.exports = __vue_exports__;
-
-/***/ },
+/* 1 */,
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1386,46 +1349,8 @@
 	__webpack_require__(58)('observable');
 
 /***/ },
-/* 70 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(71);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(73)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/.0.25.0@css-loader/index.js!./../node_modules/.9.8.1@vue-loader/lib/style-rewriter.js?id=data-v-3b22a0ce!./../node_modules/.4.0.2@sass-loader/index.js!./../node_modules/.9.8.1@vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-				var newContent = require("!!./../node_modules/.0.25.0@css-loader/index.js!./../node_modules/.9.8.1@vue-loader/lib/style-rewriter.js?id=data-v-3b22a0ce!./../node_modules/.4.0.2@sass-loader/index.js!./../node_modules/.9.8.1@vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 71 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(72)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\n\n\n\n", ""]);
-	
-	// exports
-
-
-/***/ },
+/* 70 */,
+/* 71 */,
 /* 72 */
 /***/ function(module, exports) {
 
@@ -1704,43 +1629,8 @@
 
 
 /***/ },
-/* 74 */
-/***/ function(module, exports) {
-
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	
-	
-	module.exports = {
-	    data: function () {
-	        return {
-	            greeting: "hello"
-	
-	        };
-	    }
-	};
-
-/***/ },
-/* 75 */
-/***/ function(module, exports) {
-
-	module.exports={render:function (){with(this) {
-	  return _h('div', ["\n    " + _s(greeting) + " world !\n"])
-	}},staticRenderFns: []}
-
-/***/ },
+/* 74 */,
+/* 75 */,
 /* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -9514,6 +9404,573 @@
 	
 	})));
 
+
+/***/ },
+/* 77 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var _typeof2 = __webpack_require__(2);
+	
+	var _typeof3 = _interopRequireDefault(_typeof2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var __vue_exports__, __vue_options__;
+	var __vue_styles__ = {};
+	
+	/* styles */
+	__webpack_require__(78);
+	
+	/* script */
+	__vue_exports__ = __webpack_require__(80);
+	
+	/* template */
+	var __vue_template__ = __webpack_require__(81);
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {};
+	if ((0, _typeof3.default)(__vue_exports__.default) === "object" || typeof __vue_exports__.default === "function") {
+	  __vue_options__ = __vue_exports__ = __vue_exports__.default;
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options;
+	}
+	
+	__vue_options__.render = __vue_template__.render;
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns;
+	
+	module.exports = __vue_exports__;
+
+/***/ },
+/* 78 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(79);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(73)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.9.8.1@vue-loader/lib/style-rewriter.js?id=data-v-0ab36fa3!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.9.8.1@vue-loader/lib/selector.js?type=styles&index=0!./datePicker.vue", function() {
+				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.9.8.1@vue-loader/lib/style-rewriter.js?id=data-v-0ab36fa3!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.9.8.1@vue-loader/lib/selector.js?type=styles&index=0!./datePicker.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 79 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(72)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\n.vue-date-picker * {\n  font-family: \"Segoe UI\";\n  box-sizing: border-box;\n}\n.vue-date-picker .drop-down {\n  position: absolute;\n  border: 1px solid #e3e6e9;\n  width: 220px;\n}\n.vue-date-picker .day-picker-header {\n  text-align: center;\n  position: relative;\n  height: 36px;\n  line-height: 36px;\n  background-color: #5fb554;\n  cursor: pointer;\n  color: #fff;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 80 */
+/***/ function(module, exports, __webpack_require__) {
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	
+	
+	function contains(parentNode, childNode) {
+	    if (parentNode.contains) {
+	        return parentNode != childNode && parentNode.contains(childNode);
+	    } else {
+	        return !!(parentNode.compareDocumentPosition(childNode) & 16);
+	    }
+	}
+	
+	function formatDate(date) {
+	    var year = date.getFullYear(),
+	        month = date.getMonth() + 1,
+	        day = date.getDate();
+	    if (isNaN(year)) {} else {}
+	    if (month < 10) {
+	        month = '0' + month;
+	    }
+	    if (day < 10) {
+	        day = '0' + day;
+	    }
+	
+	    return year + '-' + month + '-' + day;
+	}
+	var DayPicker = __webpack_require__(82);
+	module.exports = {
+	    data: function () {
+	        return {
+	            title: "this is day-picker",
+	            isShow: false,
+	            formatTime: "2015-8-9",
+	            isCurrentDate: false,
+	            viewDate: new Date(2016, 10, 10),
+	            selectedDate: new Date(2016, 10, 10),
+	            months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+	        };
+	    },
+	    created: function () {
+	        var self = this;
+	        // this.viewDate = this.selectDate;
+	        window.document.onmousedown = function (e) {
+	            let event = e || window.event;
+	            if (self.$refs.datePciker == event.target) {
+	                return;
+	            }
+	            if (contains(self.$refs.datePciker, event.target)) {
+	                return;
+	            }
+	            self.isShow = false;
+	        };
+	    },
+	    mounted: function () {},
+	    computed: {
+	        formatTime: function () {
+	            return formatDate(this.selectedDate);
+	        }
+	    },
+	    filters: {},
+	    methods: {
+	        changeDate: function () {
+	            var value = this.$refs.input.value;
+	            var date = new Date(value);
+	            if (isNaN(Date.parse(date))) {
+	                this.selectedDate = new Date(Date.parse(this.viewDate));
+	            } else {
+	                this.selectedDate = this.viewDate = date;
+	            }
+	        },
+	        showDrop: function () {
+	            this.isShow = !this.isShow;
+	        },
+	
+	        handleClick: function () {
+	            this.$refs.datePciker.focus();
+	        },
+	        selectDate: function (date, isNeedChange) {
+	            this.viewDate = date;
+	            if (isNeedChange) {
+	                this.selectedDate = this.viewDate;
+	                this.isShow = false;
+	            }
+	        },
+	        closePorp: function () {
+	            this.isShow = false;
+	        }
+	    },
+	    components: {
+	        'day-picker': DayPicker
+	    }
+	};
+
+/***/ },
+/* 81 */
+/***/ function(module, exports) {
+
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    ref: "datePciker",
+	    staticClass: "vue-date-picker",
+	    on: {
+	      "click": function($event) {
+	        $event.stopPropagation();
+	      }
+	    }
+	  }, [_h('div', {
+	    staticClass: "show-content"
+	  }, [_h('input', {
+	    directives: [{
+	      name: "model",
+	      rawName: "v-model.lazy.trim",
+	      value: (formatTime),
+	      expression: "formatTime",
+	      modifiers: {
+	        "lazy": true,
+	        "trim": true
+	      }
+	    }],
+	    ref: "input",
+	    staticClass: "date-input",
+	    domProps: {
+	      "value": _s(formatTime)
+	    },
+	    on: {
+	      "change": [function($event) {
+	        formatTime = $event.target.value.trim()
+	      }, changeDate]
+	    }
+	  }), _h('i', {
+	    staticClass: "show-icon",
+	    on: {
+	      "click": function($event) {
+	        $event.stopPropagation();
+	        showDrop($event)
+	      }
+	    }
+	  }, ["icon"])]), " ", _h('div', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (isShow),
+	      expression: "isShow"
+	    }],
+	    staticClass: "drop-down",
+	    on: {
+	      "mousedown": function($event) {
+	        $event.stopPropagation();
+	        handleClick($event)
+	      }
+	    }
+	  }, [_h('div', {
+	    staticClass: "day-picker-header"
+	  }, [_h('span', [_s(viewDate.getFullYear())]), " ", _h('span', [_s(months[viewDate.getMonth()])])]), " ", _h('day-picker', {
+	    attrs: {
+	      "view-date": viewDate
+	    },
+	    on: {
+	      "selectDate": selectDate,
+	      "closeProp": closePorp
+	    }
+	  })])])
+	}},staticRenderFns: []}
+
+/***/ },
+/* 82 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var _typeof2 = __webpack_require__(2);
+	
+	var _typeof3 = _interopRequireDefault(_typeof2);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var __vue_exports__, __vue_options__;
+	var __vue_styles__ = {};
+	
+	/* styles */
+	__webpack_require__(83);
+	
+	/* script */
+	__vue_exports__ = __webpack_require__(85);
+	
+	/* template */
+	var __vue_template__ = __webpack_require__(86);
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {};
+	if ((0, _typeof3.default)(__vue_exports__.default) === "object" || typeof __vue_exports__.default === "function") {
+	  __vue_options__ = __vue_exports__ = __vue_exports__.default;
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options;
+	}
+	
+	__vue_options__.render = __vue_template__.render;
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns;
+	
+	module.exports = __vue_exports__;
+
+/***/ },
+/* 83 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(84);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(73)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.9.8.1@vue-loader/lib/style-rewriter.js?id=data-v-9dec645a!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.9.8.1@vue-loader/lib/selector.js?type=styles&index=0!./dayPicker.vue", function() {
+				var newContent = require("!!./../../node_modules/.0.25.0@css-loader/index.js!./../../node_modules/.9.8.1@vue-loader/lib/style-rewriter.js?id=data-v-9dec645a!./../../node_modules/.4.0.2@sass-loader/index.js!./../../node_modules/.9.8.1@vue-loader/lib/selector.js?type=styles&index=0!./dayPicker.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 84 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(72)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\n.day-picker {\n  background: #fff;\n}\n.day-picker * {\n    font-family: \"Segoe UI\";\n    box-sizing: border-box;\n}\n.day-picker:focus {\n    outline: none;\n}\n.day-picker li {\n    display: inline-block;\n    width: 30px;\n    height: 30px;\n    line-height: 30px;\n    text-align: center;\n    list-style-type: none;\n    font-size: 0.75rem;\n    cursor: default;\n}\n.day-picker .day-picker-header {\n    text-align: center;\n    position: relative;\n    height: 36px;\n    line-height: 36px;\n    background-color: #5fb554;\n    cursor: pointer;\n    color: #fff;\n}\n.day-picker .week-header {\n    height: 30px;\n    color: #FFF;\n    font-size: 0.75em;\n    background-color: #5fb554;\n    margin: 0;\n}\n.day-picker .date-content,\n  .day-picker .weeks {\n    width: 210px;\n    padding: 0;\n    margin: 0 auto;\n}\n.day-picker .date-content li {\n    cursor: pointer;\n}\n.day-picker .date-content li.not-current-month {\n      color: #aaaaaa;\n}\n.day-picker .date-content li.selected-date {\n      border: 1px solid #4499dd;\n      line-height: 28px;\n}\n.day-picker .date-content li.current-date {\n      border: 1px solid #33bf6f;\n      background-color: #eeffee;\n      line-height: 28px;\n}\n.day-picker .date-content li:hover {\n      background: #f6f6f6;\n}\n.day-picker .current-date button {\n    height: 40px;\n    line-height: 40px;\n    text-align: center;\n    padding: 0;\n    color: #222222;\n    font-size: 0.875em;\n    width: 100%;\n    background: transparent;\n    border: 0;\n    border-top: 1px solid #e3e6e9;\n    cursor: pointer;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 85 */
+/***/ function(module, exports) {
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	
+	
+	module.exports = {
+	    data: function () {
+	        return {
+	
+	            weeks: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+	            months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+	        };
+	    },
+	    props: ['viewDate'],
+	    computed: {
+	        days: function () {
+	            let selectYear = this.viewDate.getFullYear(),
+	                selectMonth = this.viewDate.getMonth(),
+	                selectDay = this.viewDate.getDate(),
+	                leftDays = new Date(selectYear, selectMonth, 1).getDay(),
+	                lastMonthDays = new Date(selectYear, selectMonth, 0).getDate(),
+	                CurrentMonthDays = new Date(selectYear, selectMonth + 1, 0).getDate(),
+	                days = [];
+	            for (let i = leftDays; i > 0; i--) {
+	                days.push(new Date(selectYear, selectMonth - 1, lastMonthDays + 1 - i));
+	            }
+	            for (let i = 0; i < CurrentMonthDays; i++) {
+	                days.push(new Date(selectYear, selectMonth, i + 1));
+	            }
+	
+	            for (let i = 0; i < 42 - CurrentMonthDays - leftDays; i++) {
+	                days.push(new Date(selectYear, selectMonth + 1, i + 1));
+	            }
+	
+	            return days;
+	        }
+	    },
+	    filters: {
+	        getDate: function (date) {
+	            let selectYear = date.getFullYear(),
+	                selectMonth = date.getMonth(),
+	                selectDay = date.getDate();
+	            return selectDay;
+	        }
+	    },
+	    methods: {
+	        selectDay: function (date, isCurrent) {
+	            this.$emit("selectDate", date, !isCurrent);
+	        },
+	        getClass: function (date) {
+	            var self = this,
+	                className = "";
+	            if (self.viewDate.getFullYear() == date.getFullYear() && self.viewDate.getDate() == date.getDate() && self.viewDate.getMonth() == date.getMonth()) {
+	                className += " selected-date";
+	            }
+	            if (self.viewDate.getMonth() != date.getMonth()) {
+	                className += " not-current-month";
+	            }
+	            var currentDate = new Date();
+	            if (date.getFullYear() == currentDate.getFullYear() && date.getDate() == currentDate.getDate() && date.getMonth() == currentDate.getMonth()) {
+	                className += " current-date";
+	            }
+	            return className;
+	        }
+	    }
+	};
+
+/***/ },
+/* 86 */
+/***/ function(module, exports) {
+
+	module.exports={render:function (){with(this) {
+	  return _h('div', {
+	    staticClass: "day-picker"
+	  }, [_h('div', {
+	    staticClass: "week-header"
+	  }, [_h('ul', {
+	    staticClass: "weeks"
+	  }, [_l((weeks), function(week) {
+	    return _h('li', ["\n                " + _s(week) + "\n            "])
+	  })])]), " ", _h('ul', {
+	    staticClass: "date-content"
+	  }, [_l((days), function(day) {
+	    return _h('li', {
+	      class: getClass(day),
+	      on: {
+	        "click": function($event) {
+	          selectDay(day)
+	        }
+	      }
+	    }, ["\n            " + _s(_f("getDate")(day)) + "\n        "])
+	  })]), " ", _h('div', {
+	    staticClass: "current-date"
+	  }, [_h('button', {
+	    on: {
+	      "click": function($event) {
+	        selectDay(new Date(), true)
+	      }
+	    }
+	  }, ["Today"])])])
+	}},staticRenderFns: []}
 
 /***/ }
 /******/ ]);

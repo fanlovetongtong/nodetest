@@ -1,25 +1,26 @@
-<style lang="sass" scoped>
+<style lang="sass">
 
 
 
 </style>
 
-<template>
-   <div class="my-test">
-      {{hello}}
-   </div>
+<template lang="html">
+
+<div>
+    {{greeting}} world !
+</div>
 
 </template>
 
 <script>
 
-export default {
-    data(){
-            return {
-                hello:"heoo"
-            }
-        }
+module.exports = {
+    data: function() {
+        return {
+            greeting: "hello"
 
+        }
+    }
 }
 
 </script>

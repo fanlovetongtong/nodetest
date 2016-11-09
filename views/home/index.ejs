@@ -2,13 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="/css/home/index.css"/>
     <title>home page</title>
   </head>
   <body>
-    <h1>this is a homepage</h1>
+    <header>
+      <h1>this is home page</h1>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a class="demo" href="/plugin">控件介绍</a>
+        </li>
+      </ul>
+    </nav>
     <div id="test">
-
+      {{hello}}
+      <my-test></my-test>
     </div>
     <button class="sign-out">
       <a href="/account/signout">sign out</a>
