@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>something interesting</title>
+    <link
+      rel="stylesheet"
+      href="/css/others/index.css"
+      media="screen"
+      title="no title">
+  </head>
+  <body>
+    <div id="test">
+      <div>
+         让我们一起踊跃发言评论萎男黄吧（测试版）
+      </div>
+      <template>
+        <div class="comments">
+          <div
+            class="danmu"
+            v-for="comment in comments"
+            :style="getPosition(comment.style)"
+            :key="comment.objectId">
+            {{comment.content}}
+          </div>
+        </div>
+        <div class="enter-area">
+          <input
+            ref="input"
+            type="text"
+            name="comment"
+            value=""
+            v-on:keyup.enter="enterComment" />
+            <button v-on:click="enterComment">发送</button>
+        </div>
+      </template>
+    </div>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script src="/3th-part/jquery-1.10.2.min.js"></script>
+    <script src="socket.io.js"></script>
+    <script src="/js/others/index.js"></script>
+  </body>
+</html>

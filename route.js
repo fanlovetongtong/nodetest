@@ -10,6 +10,7 @@ AV.init({
   masterKey: process.env.LEANCLOUD_APP_MASTER_KEY || 'p7ECk4LDzgxNhXCQBCAR3FhG'
 });
 var app = express();
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(AV.express());
@@ -21,8 +22,13 @@ var indexRoute = require('./route/index')
 var accountRoute = require('./route/account/index');
 var filter = require('./filter/authorizeFilter');
 var plugin = require('./route/plugin/index');
+var others = require('./route/others/index');
+
 app.use('/account', accountRoute);
 app.use(filter);
 app.use(indexRoute);
-app.use('/plugin',plugin);
+app.use('/plugin', plugin);
+app.use('/others', others);
+
+
 module.exports = app;

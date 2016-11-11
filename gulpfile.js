@@ -29,6 +29,6 @@ gulp.task('js:w', function() {
   gulp.watch('js/**/*.js', ['js']);
 })
 
-gulp.task('default', ['sass','js','js:w','sass:w'], function() {
+gulp.task('default', ['sass','sass:w'], function() {
   console.log('compile');
 });

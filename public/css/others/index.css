@@ -1,0 +1,51 @@
+@-webkit-keyframes myfirst {
+  0% {
+    right: 0;
+    opacity: 1; }
+  25% {
+    right: 25%; }
+  50% {
+    right: 50%; }
+  75% {
+    right: 75%; }
+  100% {
+    right: 100%;
+    opacity: 1; } }
+
+@keyframes myfirst {
+  0% {
+    right: 0;
+    opacity: 1; }
+  25% {
+    right: 25%; }
+  50% {
+    right: 50%; }
+  75% {
+    right: 75%; }
+  100% {
+    right: 100%;
+    opacity: 1; } }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+#test {
+  position: relative;
+  height: 100%; }
+  #test .enter-area {
+    position: absolute;
+    bottom: 20px; }
+
+.danmu {
+  line-height: 30px;
+  height: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  opacity: 0;
+  box-shadow: 1px; }

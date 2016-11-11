@@ -1,7 +1,9 @@
 const config = {
   entry: {
     'home/index': './js/home/index.js',
-    'plugin/index': './js/plugin/index.js'
+    'plugin/index': './js/plugin/index.js',
+    'others/index': './js/others/index.js',
+    'others/chart': './js/others/chart.js',
   },
   output: {
     filename: '[name].js',
@@ -37,6 +39,11 @@ const config = {
     alias: {
       vue: 'vue/dist/vue.js'
     }
-  }
+  },
+  externals:{
+       'Zepto':'window.Zepto',
+       '$':'window.Jquery',
+       'JavascriptInterface':'window.JavascriptInterface'
+   },
 }
 module.exports = config;

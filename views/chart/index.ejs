@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>chart room</title>
+  </head>
+  <body>
+    <h1>捉急的聊天室简陋版本</h1>
+    <div id="test">
+      <template>
+        <div class="nickname">
+          <input type="text" placeholder="输入你的聊天昵称吧" value="" v-model.trim="nickname"  />
+        </div>
+        <div class="messages">
+          <ul>
+            <li v-for="message  in messages">
+              <span class="username">{{message.username}}说：</span>
+              <span class="context">{{message.content}}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="enter-area">
+          <input v-model.lazy.trim="enterValue" v-on:keyup.enter="enter"/>
+          <button v-on:click="enter">发送信息</button>
+        </div>
+      </template>
+    </div>
+    <script src="/3th-part/jquery-1.10.2.min.js"></script>
+    <script src="/socket.io.js"></script>
+    <script src="/js/others/chart.js"></script>
+  </body>
+</html>
